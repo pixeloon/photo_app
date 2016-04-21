@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  if(message) 
+    p= message
+  h1 Sign up!
+  form.form-group(action="/auth/signup" method="POST")
+    p
+      input(type="text" name="user[username]" autofocus)
+    p
+      input(type="password" name="user[password]")
+    p
+      input.btn.btn-default(type="submit" value="Sign up")

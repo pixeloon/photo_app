@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 User Profil for #{user.username}
+  form(action="/users" method="POST")
+    p
+      ul
+        li
+          a(href="/users/#{user.id}/photos") Your photos
+        li
+          a(href="/users/#{user.id}/edit") Edit Profile

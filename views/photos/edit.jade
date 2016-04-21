@@ -1,0 +1,14 @@
+extends ../layout
+
+block title
+title Photo App
+
+block content
+  h1 Edit Photo
+  form.form-group(action="/users/#{photo.user_id}/photos/#{photo.id}?_method=put" method="POST")
+    p
+      input(type="text" name="photo[desc]" value="#{photo.desc}" placeholder="Enter Description")
+    p
+      input(type="text" name="photo[url]" value="#{photo.url}" placeholder="Enter Image Link")
+    p
+      input.btn.btn-default(type="submit" value="Submit")

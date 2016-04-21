@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h1 All our users:
+  each user in users
+    p Username - #{user.username}
+      a(href="/users/#{user.id}")
+        p Detail
+    a(href="/users/#{user.id}/photos")
+      p Photo page

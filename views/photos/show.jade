@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 Show photo #{photo.id} 
+  a(href="/users/#{photo.user_id}/photos/")   Go back
+  p Description: #{photo.desc}
+  p
+    img.show(src="#{photo.url}" width="800px")

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1 Edit User
+  form.form-group(action="/users?_method=put" method="POST")
+    p
+      input(type="text" name="user[username]" value="#{user.username}")
+    p
+      input(type="password" name="user[password]" value="#{user.password}")
+    p
+      input.btn.btn-default(type="submit" value="Submit")
+  a(href="/users/#{currentUser.id}")
+    button.btn.btn-default Cancel

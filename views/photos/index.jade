@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  if (photos)
+    a(href="/users/#{currentUser.id}/photos/new") Add a new photo
+    h1 See all the photos
+    each photo in photos
+      p #{photo.desc}  
+        a(href="/users/#{photo.user_id}/photos/edit/#{photo.id}") edit 
+      p 
+        a(href="/users/#{photo.user_id}/photos/#{photo.id}")
+          img.gallery(src = "#{photo.url}" width="400px")
+        form.form-group(action="/users/#{photo.user_id}/photos/#{photo.id}?_method=DELETE" method="POST")
+          button.btn.bt-danger.push-right(type="submit") delete
+  else
+    p You have no photos yet.
+    p
+      a(href="/users/#{currentUser.id}/photos/new") Add some here.

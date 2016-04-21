@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 New Photo
+  form.form-group(action="/users/#{user_id}/photos" method="POST")
+    p
+      input(type="text" name="photo[desc]" placeholder="Enter Description")
+    p
+      input(type="text" name="photo[url]" placeholder="Enter Image Link")
+    p
+      input.btn.btn-default(type="submit" value="Submit")
